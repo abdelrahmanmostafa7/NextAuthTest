@@ -30,7 +30,7 @@ export function LoginForm({ className, ...props }) {
 
     if (!res.error) {
       console.log("Login successful ✅");
-      window.location.href = "/successful";
+      window.location.href = "/";
     } else {
       console.error("Login failed", res.error);
     }
