@@ -25,11 +25,30 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           return {
             id: data.user.id,
             email: data.user.email,
+            
+            // بعد كدا لو هستخدم سيشن ف انا محتاج ابعت الداتا من jwt token للسيشن
+            // token: data.token, // تحفظ التوكن اللي رجع من API
           };
         }
         return null;
       },
     }),
+    // فبعد كدا هعمل callbacks 
+//     callbacks: {
+//   async jwt({ token, user }) {
+//     if (user) {
+//       token.accessToken = user.token;
+//     }
+//     return token;
+//   },
+//   async session({ session, token }) {
+//     session.accessToken = token.accessToken;
+//     return session;
+//   },
+// }
+
+
+    
   ],
   secret: process.env.AUTH_SECRET,
 });
